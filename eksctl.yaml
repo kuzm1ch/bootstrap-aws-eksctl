@@ -1,0 +1,18 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: k8s-poc
+  region: eu-central-1
+
+managedNodeGroups:
+  - name: ng-spot-1
+    instanceTypes: ["t3a.xlarge", "t3.xlarge", "t2.xlarge", "m5a.xlarge", "m5.xlarge", "m5zn.xlarge"]
+    desiredCapacity: 1
+    volumeSize: 100
+    spot: true
+    labels: {role: worker}
+    tags:
+      nodegroup-role: "worker"
+      spot: "true"
+  
