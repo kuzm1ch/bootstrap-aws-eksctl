@@ -14,3 +14,5 @@ spec:
     path: argocd/apps
     repoURL: https://github.com/kuzm1ch/bootstrap-aws-eksctl
     targetRevision: master
+  syncPolicy:
+    automated: {}
