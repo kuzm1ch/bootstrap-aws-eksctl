@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kustomize-guestbook
+  name: kustomize-guestbook-overlay
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -11,9 +11,6 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: kustomize-guestbook
-    repoURL: argocd/kustomize/dev/overlays/example-app
-    targetRevision: master
-    kustomize:
-      images:
-        - gcr.io/heptio-images/ks-guestbook-demo:0.2
+    path: argocd/kustomize/dev/overlays/example-app
+    repoURL: https://github.com/kuzm1ch/bootstrap-aws-eksctl
+    targetRevision: {{ .Values.spec.source.targetRevision }}
