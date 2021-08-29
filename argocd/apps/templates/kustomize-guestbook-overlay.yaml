@@ -11,6 +11,6 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: argocd/kustomize/dev/overlays/example-app
+    path: argocd/kustomize/overlays/dev/example-app
     repoURL: https://github.com/kuzm1ch/bootstrap-aws-eksctl
     targetRevision: {{ .Values.spec.source.targetRevision }}
