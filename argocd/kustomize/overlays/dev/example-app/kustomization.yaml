@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ../../../bases/kustomize-guestbook
   - secret-dev.yaml
+  - secret-v2-dev.yaml
