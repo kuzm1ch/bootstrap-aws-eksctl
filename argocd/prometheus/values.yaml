@@ -2,14 +2,14 @@ prometheus-operator:
   defaultRules:
     create: false
     rules: 
-      alertmanager: false
+      alertmanager: true
       etcd: false
       general: false
       k8s: false
       kubeApiserver: false
       kubeApiserverAvailability: false
       kubeApiserverError: false
-      kubeApiserverSlos: false
+      kubeApiserverSlos: true
       kubelet: false
       kubePrometheusGeneral: false
       kubePrometheusNodeAlerting: false
@@ -24,7 +24,7 @@ prometheus-operator:
       network: false
       node: false
       prometheus: false
-      prometheusOperator: false
+      prometheusOperator: true
       time: false
 
 alertmanager:
