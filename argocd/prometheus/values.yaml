@@ -1,6 +1,6 @@
 prometheus-operator:
   defaultRules:
-    create: false
+    create: true
     rules: 
       alertmanager: true
       etcd: false
